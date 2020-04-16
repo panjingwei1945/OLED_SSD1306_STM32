@@ -53,7 +53,7 @@ void OLED_WR_Byte(uint8_t dat, uint8_t cmd)
   else
   OLED_DC_Clr();
   OLED_CS_Clr();
-  HAL_SPI_Transmit(&hspi4, &dat, 1, HAL_MAX_DELAY);
+  SPI_TRANSMIT(dat);
   OLED_CS_Set();
   OLED_DC_Set();
 }
@@ -95,7 +95,7 @@ void OLED_Clear(void)
 //x:0~127
 //y:0~63
 //mode:0,反白显示;1,正常显示
-//size:选择字体 16/12
+//size:选择字体 16/8
 void OLED_ShowChar(uint8_t x, uint8_t y, uint8_t chr, uint8_t size)
 {
   unsigned char c = 0, i = 0;
@@ -139,6 +139,7 @@ void OLED_ShowNum(uint8_t x, uint8_t y, uint32_t num, uint8_t len, uint8_t size)
 {
   uint8_t t, temp;
   uint8_t enshow = 0;
+  size = (size == 16) ? 16 : 12;
   for (t = 0; t < len; t++)
   {
     temp = (num / oled_pow(10, len - t - 1)) % 10;

@@ -34,6 +34,8 @@
 #define OLED_DC_Clr() HAL_GPIO_WritePin(OLED_DC_GPIO_Port,OLED_DC_Pin,GPIO_PIN_RESET)
 #define OLED_DC_Set() HAL_GPIO_WritePin(OLED_DC_GPIO_Port,OLED_DC_Pin,GPIO_PIN_SET)
 
+#define SPI_TRANSMIT(d) HAL_SPI_Transmit(&hspi4, &d, 1, HAL_MAX_DELAY);
+
 #define OLED_CMD  0	//写命令
 #define OLED_DATA 1	//写数据
 
