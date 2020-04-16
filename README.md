@@ -5,7 +5,7 @@ SSD1306 library for STM32 HAL
 
 	* https://github.com/panjingwei1945/OLED_SSD1306_STM32
 	* OLED_SSD1306_STM32\ssd1306.c --> Src
-
+	* OLED_SSD1306_STM32\ssd1306.c --> Src
 	* OLED_SSD1306_STM32\ssd1306.h --> inc
 	* OLED_SSD1306_STM32\oledfont.c --> Src
 	* OLED_SSD1306_STM32\oledfont.c --> inc
@@ -48,8 +48,8 @@ OLED_Clear();
 ```
 
 * 显示中文。
-* 使用PCtoLCD2002生成字模。选项见下。
-* 比如可以生成如下的字模数组，放到oledfont.c文件中。
+  * 使用PCtoLCD2002生成字模。选项见下。
+  * 比如可以生成如下的字模数组，放到oledfont.c文件中。
 
 ```c
 const unsigned char testChText[][32] = {    
